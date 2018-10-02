@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
--->	
+-->
 
 # BTS2
 This is the Open Source repository for the University of California Santa Cruz's new bus tracking system.
@@ -29,19 +29,22 @@ This is the Open Source repository for the University of California Santa Cruz's
 The website is built using the Single Page Application Javascript framework called AngularJS. Also Grunt and Bower are used as tools
 to better optimize dependency management and code optimization scripts. Tools like JShint are automatically run by Grunt.
 
-##To Build:
+# October 2018
+Due to recent Google Maps API changes and the aging of AngularJS libraries, we started to have more bugs crop up. This forked version shall be the documented production version changes for Fall 2018.
+
+# To Build:
 In the root directory of the repo run: <br>
 <code> bower install </code> <br>
 
 <code> grunt build  </code> <br>
 This will create the deployable files in the /dist directory. If you generate any errors during the build, you might need to update your generators. Run <code> yo </code> and select upgrade generators.
 
-##To Test:
+# To Test:
 Change into the /app directory (or /dist directory after building) and run:<br>
 <code> grunt serve </code> <br>
 A local nodeJS server will be run and you can see the app at http://localhost:9000
 
-##What Does What
+# What Does What
 - AngularJS is acting as the front end UI layer
 - A Go app acts an API to pull live data from the campus shuttles with GPS devices.
 - A MySQL DB is used to store information about the shuttles, routes and hardware.
@@ -50,4 +53,3 @@ A local nodeJS server will be run and you can see the app at http://localhost:90
 - bts-mysql.ucsc.edu is the DB server.
 - There is (was) an Android app available in the store.
 - An iOS app was never released but might make a good project.
-
