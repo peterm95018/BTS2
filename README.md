@@ -34,6 +34,7 @@ Due to recent Google Maps API changes and the aging of AngularJS libraries, we s
 
 Most of what has changed are bringing AngularJS up to 1.7.4 and aligning libraries to versions that will work with 1.7.4. This work will be part of branch 2.1.
 
+
 # To Build:
 In the root directory of the repo run: <br>
 <code> bower install </code> <br>
