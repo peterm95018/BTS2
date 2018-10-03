@@ -34,6 +34,8 @@ Due to recent Google Maps API changes and the aging of AngularJS libraries, we s
 
 Most of what has changed are bringing AngularJS up to 1.7.4 and aligning libraries to versions that will work with 1.7.4. This work will be part of branch 2.1.
 
+Some of the along the route things I had to deal with include upgrading my machine with XCode updates, getting the gem for compass installed, and updating the ruby gems. Compass is a SASS compiler that is called by Grunt to process any CSS changes in this app.
+
 
 # To Build:
 In the root directory of the repo run: <br>
