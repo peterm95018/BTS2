@@ -32,6 +32,8 @@ to better optimize dependency management and code optimization scripts. Tools li
 # October 2018
 Due to recent Google Maps API changes and the aging of AngularJS libraries, we started to have more bugs crop up. This forked version shall be the documented production version changes for Fall 2018.
 
+Most of what has changed are bringing AngularJS up to 1.7.4 and aligning libraries to versions that will work with 1.7.4. This work will be part of branch 2.1.
+
 # To Build:
 In the root directory of the repo run: <br>
 <code> bower install </code> <br>
