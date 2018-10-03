@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-*/ 	
+*/
 
 'use strict';
 
@@ -77,7 +77,7 @@ angular.module('BTS2App')
     /* Some google map properties need to be predefined before being loaded */
     $scope.map = {  id: 1,
     				center : {latitude: 36.990282103105066,
-        			longitude: -122.06149578094482}, 
+        			longitude: -122.06149578094482},
         			markers:[],
         			busInnerStops:[],
         			busOuterStops:[],
@@ -101,7 +101,7 @@ angular.module('BTS2App')
 					    scaleControlOptions: {
 					        position: 7
 					    }
-					    
+
 			      	},
 			      	events: {}
         		};
@@ -113,7 +113,7 @@ angular.module('BTS2App')
     	$scope.maps = maps;
     	fillStops();
     	getData();
-    	
+
     });
 
   	var updateBusMarkers = function(){
@@ -148,7 +148,7 @@ angular.module('BTS2App')
                 };
 
 
-              
+
 		}
 		 _.each($scope.map.markers, function (marker) {
 		    marker.closeClick = function () {
@@ -173,7 +173,7 @@ angular.module('BTS2App')
     		var numDeltas = 100;
 		    var delay = 5; //milliseconds
 		    var frame = 0;
-			
+
     		var moveMarker = function (){
     			if($scope.map.markers.length === 0){
     				return;
@@ -195,7 +195,7 @@ angular.module('BTS2App')
 
 		    // PSM adjusted newBuslocation.lat, lon based on second arg being passed in from line 273
 		    // newBusLocation is the data.marker.lat, lng value
-			if(($scope.map.markers[originalBusIndex].latitude !==newBusLocation.lat) || 
+			if(($scope.map.markers[originalBusIndex].latitude !==newBusLocation.lat) ||
 					($scope.map.markers[originalBusIndex].longitude !==newBusLocation.lon)){
 				console.log(newBusLocation.lat + ' - ' + $scope.map.markers[originalBusIndex].latitude);
 
@@ -211,7 +211,7 @@ angular.module('BTS2App')
 			}else{
 				return;
 			}
-				
+
 		};
 	    /***************************************/
 
@@ -229,7 +229,7 @@ angular.module('BTS2App')
 
 		// PSM
 		data.markers = data;
-    
+
 	    		//$rootScope.busCount = data.count;
 	    		$rootScope.busCount = data.length;
 	      		if($rootScope.busCount === 0 && (!$scope.noBusMessage)){
@@ -246,9 +246,9 @@ angular.module('BTS2App')
 	      				}
 	  				};
 	  				if ( add ){
-	  				// do a console.log on data.markers[j] to inspect what we're sending to 
+	  				// do a console.log on data.markers[j] to inspect what we're sending to
 	  				// main.js createMarker. createMarker expects id, latitude, longitude, route
-	  				
+
 	  					$scope.map.markers.push($scope.createMarker(data.markers[j]));
 	  					$scope.markerIDs.push(data.markers[j].id);
 	  				}
@@ -308,7 +308,7 @@ angular.module('BTS2App')
 				       $scope.map.center = {latitude: marker.latitude,
 		        			longitude: marker.longitude};
 				       onClickedBus(marker);
-				       
+
 				    };
 				});
 
@@ -323,26 +323,26 @@ angular.module('BTS2App')
 					$timeout.cancel($scope.animateTimeout);
 					$scope.map.markers.splice(0,$scope.map.markers.length);
 					$scope.markerIDs.splice(0,$scope.markerIDs.length);
-					
+
 				};
 				$window.onfocus = function () {
 					//Restart data refresh requests
 					getData();
-				}; 
+				};
 
-			} 
-		});		
+			}
+		});
 
 	};
 
 	var onClickedBus = function( bus ){
 			$scope.currBus = bus.route;
 			$scope.showRoute();
-	}; 
+	};
 
 	/*
 	 * Stops are static and therefor don't need to be retrieved from the server, so
-	 * they are statically defined here. May move them to a utility file later :) 
+	 * they are statically defined here. May move them to a utility file later :)
 	 */
 	var fillStops = function() {
 
@@ -435,9 +435,9 @@ angular.module('BTS2App')
 		    };
 		});
 
-		
+
 	};
-	
+
 
 	var onclickedStop = function( stop ){
 			$scope.currentStopName = stop.stopName;
@@ -449,7 +449,7 @@ angular.module('BTS2App')
 			alert(stop);
 		};
 	$scope.showStop = function($event) {
-	    	
+
 		    $mdDialog.show({
 		      clickOutsideToClose: true,
 		      controller: DialogController,
@@ -463,7 +463,7 @@ angular.module('BTS2App')
 		      //nothing
 		    });
 
-		 
+
 	};
 	$scope.showNoBuses = function($event) {
 		$scope.noBusMessage = true;
@@ -511,7 +511,7 @@ angular.module('BTS2App')
 	    });
 	};
 
-	
+
 	$scope.showTestDialog = function($event) {
 	    $mdDialog.show({
 	      clickOutsideToClose: true,
@@ -523,16 +523,14 @@ angular.module('BTS2App')
 	    .then(function(answer) {
     		if(!$rootScope.notMobile){
     			$scope.updateIOSScreenSize();
-				//$scope.showMobileApp();	
+				//$scope.showMobileApp();
 				$scope.copyright = 'copyrightMobile';
 			}
 	    }, function() {
 	    	//nothing
 	    });
 	};
-	
-	$scope.showTestDialog();
+
+//	$scope.showTestDialog();
 
 });
-
-
